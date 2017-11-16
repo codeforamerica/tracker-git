@@ -3,7 +3,7 @@ module Tracker
     def contains?(message, options = {})
       branch = options.fetch(:branch, "HEAD")
       remote_branch = options[:remote_branch]
-      result = `git log #{[remote_branch, branch].compact.join('..')} --grep='#{message}'`
+      result = `git log #{[remote_branch, branch].compact.join('..')} --grep='[Finishes ##{message}]'`
       result.length > 0
     end
   end
