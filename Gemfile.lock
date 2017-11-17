@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tracker-git (0.0.6)
+    tracker-git (0.0.7)
       pivotal-tracker (>= 0.5.10)
 
 GEM
@@ -102,3 +102,6 @@ DEPENDENCIES
   rest-client
   rspec
   tracker-git!
+
+BUNDLED WITH
+   1.16.0
