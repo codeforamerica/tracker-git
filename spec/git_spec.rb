@@ -4,7 +4,7 @@ describe Tracker::Git do
   describe "#search" do
     let(:message) { 123456 }
     let(:branch) { "HEAD" }
-    let(:query) { "git log #{branch} --grep='[Finishes ##{message}]'" }
+    let(:query) { "git log #{branch} --grep='Finishes ##{message}'" }
     let(:result) { "Some git message" }
     let(:git) { Tracker::Git.new }
 
@@ -44,7 +44,7 @@ describe Tracker::Git do
 
     context "when remote brach is not blank" do
       let(:remote_branch) { 'remote/branch' }
-      before { expect(git).to receive(:`).with("git log #{remote_branch}..#{branch} --grep='[Finishes ##{message}]'") { result } }
+      before { expect(git).to receive(:`).with("git log #{remote_branch}..#{branch} --grep='Finishes ##{message}'") { result } }
 
       it "searches via system calls using geven remote and local branches" do
         git.contains?(message, branch: branch, remote_branch: remote_branch)
